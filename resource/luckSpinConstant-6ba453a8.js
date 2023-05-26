@@ -1,0 +1,1 @@
+const e=[{type:0,name:"谢谢参与"},{type:1,name:"余额红包"},{type:2,name:"商品满减券"},{type:4,name:"商品"},{type:5,name:"虚拟物品"}],a=[{level:10,name:"未中奖"},{level:20,name:"普通奖品"},{level:30,name:"中级奖品"},{level:40,name:"高级奖品"},{level:50,name:"终极大奖"}],l=a.reduce(((e,a)=>(e[a.level]=a.name,e)),{}),n=e.reduce(((e,a)=>(e[a.type]=a.name,e)),{});export{n as a,l as b,a as l,e as p};
