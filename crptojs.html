@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加密解密示例</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
+</head>
+<body>
+    <label for="dataToEncrypt">输入需要加密的数据：</label>
+    <input type="text" id="dataToEncrypt" placeholder="请输入数据...">
+    <button onclick="encryptData()">加密数据</button>
+    
+    <h3>加密结果：</h3>
+    <pre id="encryptedResult"></pre>
+    
+    <!-- <h3>解密结果：</h3>
+    <pre id="decryptedResult"></pre> -->
+
+    <label for="dataToEncrypt2">输入需要解密的数据：</label>
+    <input type="text" id="dataToEncrypt2" placeholder="请输入数据...">
+    <button onclick="encryptData2()">解密数据</button>
+    <h3>解密结果：</h3>
+    <pre id="decryptedResult2"></pre>
+    
+    <script>
+        // 密钥（在实际应用中，应该保密）
+        const secretKey = "mySecretKey12345"; // 简单密钥
+
+        // 加密函数
+        function encryptData() {
+            // 获取输入数据
+            const data = document.getElementById('dataToEncrypt').value;
+
+            // 使用 CryptoJS 进行加密
+            const encryptedData = CryptoJS.AES.encrypt(data, secretKey).toString();
+
+            // 显示加密结果
+            document.getElementById('encryptedResult').textContent = encryptedData;
+
+            // 解密已加密的数据
+            // decryptData(encryptedData);
+        }
+
+         // 加密函数
+         function encryptData2() {
+            // 获取输入数据
+            const data = document.getElementById('dataToEncrypt2').value;
+
+
+            // 解密已加密的数据
+            decryptData2(data);
+        }
+
+        // 解密函数
+        function decryptData(encryptedData) {
+            // 使用 CryptoJS 进行解密
+            const bytes = CryptoJS.AES.decrypt(encryptedData, secretKey);
+            const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+
+            // 显示解密结果
+            document.getElementById('decryptedResult').textContent = decryptedData;
+        }
+        // 解密函数
+        function decryptData2(encryptedData) {
+            // 使用 CryptoJS 进行解密
+            const bytes = CryptoJS.AES.decrypt(encryptedData, secretKey);
+            const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+
+            // 显示解密结果
+            document.getElementById('decryptedResult2').textContent = decryptedData;
+        }
+    </script>
+
+</body>
+</html>

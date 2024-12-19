@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>请求封装结合webpack智能提示 | Tuco</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/25611177?s=400&amp;u=11064d99200489b4c5ea21ccfdc7577fc9b000a2&amp;v=4">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+    <meta name="description" content="Tuco的博客网站,由vuepress驱动,主要记录前端技术">
+    
+    <link rel="preload" href="/assets/css/0.styles.fc67fae0.css" as="style"><link rel="preload" href="/assets/js/app.1bf2ce02.js" as="script"><link rel="preload" href="/assets/js/2.219323b9.js" as="script"><link rel="preload" href="/assets/js/5.8878a9b1.js" as="script"><link rel="preload" href="/assets/js/39.d17837f7.js" as="script"><link rel="prefetch" href="/assets/js/10.650a7223.js"><link rel="prefetch" href="/assets/js/11.2af982a8.js"><link rel="prefetch" href="/assets/js/12.e42d104b.js"><link rel="prefetch" href="/assets/js/13.524595a7.js"><link rel="prefetch" href="/assets/js/14.8aeca2f4.js"><link rel="prefetch" href="/assets/js/15.fa273b4b.js"><link rel="prefetch" href="/assets/js/16.ad364354.js"><link rel="prefetch" href="/assets/js/17.c65e4e8f.js"><link rel="prefetch" href="/assets/js/18.eabb623a.js"><link rel="prefetch" href="/assets/js/19.221e7943.js"><link rel="prefetch" href="/assets/js/20.b583b78f.js"><link rel="prefetch" href="/assets/js/21.dd9c2e27.js"><link rel="prefetch" href="/assets/js/22.9cafbf79.js"><link rel="prefetch" href="/assets/js/23.2ae49b4a.js"><link rel="prefetch" href="/assets/js/24.6ed30404.js"><link rel="prefetch" href="/assets/js/25.00cb3394.js"><link rel="prefetch" href="/assets/js/26.2ae0d0e8.js"><link rel="prefetch" href="/assets/js/27.70d700a9.js"><link rel="prefetch" href="/assets/js/28.c3b0df5a.js"><link rel="prefetch" href="/assets/js/29.95015d5c.js"><link rel="prefetch" href="/assets/js/3.2b7cc44b.js"><link rel="prefetch" href="/assets/js/30.485b216f.js"><link rel="prefetch" href="/assets/js/31.6fb7dfa2.js"><link rel="prefetch" href="/assets/js/32.c5f99e09.js"><link rel="prefetch" href="/assets/js/33.316db203.js"><link rel="prefetch" href="/assets/js/34.79f032f6.js"><link rel="prefetch" href="/assets/js/35.fe55f85c.js"><link rel="prefetch" href="/assets/js/36.f10a76df.js"><link rel="prefetch" href="/assets/js/37.af9b19aa.js"><link rel="prefetch" href="/assets/js/38.31eb47ac.js"><link rel="prefetch" href="/assets/js/4.f283c864.js"><link rel="prefetch" href="/assets/js/40.f6faedde.js"><link rel="prefetch" href="/assets/js/41.83fb5be3.js"><link rel="prefetch" href="/assets/js/42.a9463e3d.js"><link rel="prefetch" href="/assets/js/43.c31feac2.js"><link rel="prefetch" href="/assets/js/44.f0af8b13.js"><link rel="prefetch" href="/assets/js/45.4909e6f6.js"><link rel="prefetch" href="/assets/js/46.0d46b76c.js"><link rel="prefetch" href="/assets/js/47.d8779b3f.js"><link rel="prefetch" href="/assets/js/48.e38b7826.js"><link rel="prefetch" href="/assets/js/49.5e5b318f.js"><link rel="prefetch" href="/assets/js/50.e0b0831c.js"><link rel="prefetch" href="/assets/js/51.ea7abf93.js"><link rel="prefetch" href="/assets/js/52.c8ce9dbd.js"><link rel="prefetch" href="/assets/js/53.ddf703bf.js"><link rel="prefetch" href="/assets/js/54.2b0b7125.js"><link rel="prefetch" href="/assets/js/55.c26e0bd8.js"><link rel="prefetch" href="/assets/js/56.daf30f47.js"><link rel="prefetch" href="/assets/js/57.a551809f.js"><link rel="prefetch" href="/assets/js/58.3a143760.js"><link rel="prefetch" href="/assets/js/59.bb1757df.js"><link rel="prefetch" href="/assets/js/6.4ae5b1d8.js"><link rel="prefetch" href="/assets/js/60.fabaeccd.js"><link rel="prefetch" href="/assets/js/61.18f5ad28.js"><link rel="prefetch" href="/assets/js/62.993fb7f3.js"><link rel="prefetch" href="/assets/js/63.26c887b6.js"><link rel="prefetch" href="/assets/js/64.5cb964c1.js"><link rel="prefetch" href="/assets/js/65.48f3bfc9.js"><link rel="prefetch" href="/assets/js/66.cc204872.js"><link rel="prefetch" href="/assets/js/67.23f1e028.js"><link rel="prefetch" href="/assets/js/68.50e08681.js"><link rel="prefetch" href="/assets/js/69.43df9599.js"><link rel="prefetch" href="/assets/js/7.31563962.js"><link rel="prefetch" href="/assets/js/70.6a916870.js"><link rel="prefetch" href="/assets/js/71.d7656a80.js"><link rel="prefetch" href="/assets/js/72.51ee842e.js"><link rel="prefetch" href="/assets/js/73.9ccbe29f.js"><link rel="prefetch" href="/assets/js/74.6543c34a.js"><link rel="prefetch" href="/assets/js/75.58be3f52.js"><link rel="prefetch" href="/assets/js/76.7715b243.js"><link rel="prefetch" href="/assets/js/77.097dc51f.js"><link rel="prefetch" href="/assets/js/78.a01dc128.js"><link rel="prefetch" href="/assets/js/79.bae9566f.js"><link rel="prefetch" href="/assets/js/8.429da1d8.js"><link rel="prefetch" href="/assets/js/80.740efe76.js"><link rel="prefetch" href="/assets/js/81.2b554016.js"><link rel="prefetch" href="/assets/js/82.a897e0c7.js"><link rel="prefetch" href="/assets/js/9.184a1a6a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.fc67fae0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><a href="https://github.com/facexl/vuepress-theme-easyBlog" aria-label="View source on Github" class="github-corner"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" class="octo-arm" style="transform-origin: 130px 106px"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a> <div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <div class="links"><nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/category/all/1.html" class="nav-link">All</a></div><div class="nav-item"><a href="/category/study/1.html" class="nav-link">Study</a></div><div class="nav-item"><a href="/category/practice/1.html" class="nav-link">Practice</a></div><div class="nav-item"><a href="/category/chat/1.html" class="nav-link">Chat</a></div> <div class="avatar-container" data-v-0494715f><div class="box" data-v-0494715f><div class="bg" data-v-0494715f><div class="bg-img" style="background-image:;opacity:0;" data-v-0494715f></div> <div id="spinner-detail" data-v-e5a4d2a0 data-v-0494715f><div class="xdot1" data-v-e5a4d2a0></div> <div class="xdot2" data-v-e5a4d2a0></div></div></div> <div class="author" data-v-0494715f>Tuco</div> <div class="desc" data-v-0494715f>
+            一个前端 / <a href="https://github.com/facexl" target="_blank" class="contact" style="cursor:pointer;color:#3eaf7c" data-v-0494715f>github</a> <div data-v-0494715f><a href="mailto:438944342@qq.com" style="cursor:pointer;" data-v-0494715f>Email:438944342@qq.com</a></div></div> <nav class="site-state motion-element" data-v-0494715f><div class="site-state-item site-state-posts" data-v-0494715f><a href="javascript:;" data-v-0494715f><span class="site-state-item-count" data-v-0494715f>67</span> <span class="site-state-item-name" data-v-0494715f>日志</span></a></div> <div class="site-state-item site-state-categories" data-v-0494715f><a href="javascript:;" data-v-0494715f><span class="site-state-item-count" data-v-0494715f>4</span> <span class="site-state-item-name" data-v-0494715f>分类</span></a></div></nav></div></div> <!----></nav> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/category/all/1.html" class="nav-link">All</a></div><div class="nav-item"><a href="/category/study/1.html" class="nav-link">Study</a></div><div class="nav-item"><a href="/category/practice/1.html" class="nav-link">Practice</a></div><div class="nav-item"><a href="/category/chat/1.html" class="nav-link">Chat</a></div> <div class="avatar-container" data-v-0494715f><div class="box" data-v-0494715f><div class="bg" data-v-0494715f><div class="bg-img" style="background-image:;opacity:0;" data-v-0494715f></div> <div id="spinner-detail" data-v-e5a4d2a0 data-v-0494715f><div class="xdot1" data-v-e5a4d2a0></div> <div class="xdot2" data-v-e5a4d2a0></div></div></div> <div class="author" data-v-0494715f>Tuco</div> <div class="desc" data-v-0494715f>
+            一个前端 / <a href="https://github.com/facexl" target="_blank" class="contact" style="cursor:pointer;color:#3eaf7c" data-v-0494715f>github</a> <div data-v-0494715f><a href="mailto:438944342@qq.com" style="cursor:pointer;" data-v-0494715f>Email:438944342@qq.com</a></div></div> <nav class="site-state motion-element" data-v-0494715f><div class="site-state-item site-state-posts" data-v-0494715f><a href="javascript:;" data-v-0494715f><span class="site-state-item-count" data-v-0494715f>67</span> <span class="site-state-item-name" data-v-0494715f>日志</span></a></div> <div class="site-state-item site-state-categories" data-v-0494715f><a href="javascript:;" data-v-0494715f><span class="site-state-item-count" data-v-0494715f>4</span> <span class="site-state-item-name" data-v-0494715f>分类</span></a></div></nav></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>请求封装结合webpack智能提示</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/2019/0703_tsApiWebpack.html#请求封装结合-webpack-智能提示" class="sidebar-link">请求封装结合 webpack 智能提示</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/2019/0703_tsApiWebpack.html#引言" class="sidebar-link">引言</a></li><li class="sidebar-sub-header"><a href="/blog/2019/0703_tsApiWebpack.html#目标" class="sidebar-link">目标</a></li><li class="sidebar-sub-header"><a href="/blog/2019/0703_tsApiWebpack.html#_1-请求封装" class="sidebar-link">1.请求封装</a></li><li class="sidebar-sub-header"><a href="/blog/2019/0703_tsApiWebpack.html#_2-利用-webpack-的-require-context-收集接口-url" class="sidebar-link">2.利用 webpack 的 require.context 收集接口 url</a></li><li class="sidebar-sub-header"><a href="/blog/2019/0703_tsApiWebpack.html#_3-把index-ts导出挂载在-vue-实例上" class="sidebar-link">3.把index.ts导出挂载在 vue 实例上</a></li><li class="sidebar-sub-header"><a href="/blog/2019/0703_tsApiWebpack.html#_4-手写-types-api-ts-感受提示效果" class="sidebar-link">4.手写 @/types/api.ts 感受提示效果</a></li><li class="sidebar-sub-header"><a href="/blog/2019/0703_tsApiWebpack.html#_5-自动生成-types-api-ts" class="sidebar-link">5.自动生成@/types/api.ts</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <!----> <div class="theme-default-content content__default"><h2 id="请求封装结合-webpack-智能提示"><a href="#请求封装结合-webpack-智能提示" class="header-anchor">#</a> 请求封装结合 webpack 智能提示</h2> <h3 id="引言"><a href="#引言" class="header-anchor">#</a> 引言</h3> <p><code>工欲善其事，必先利其器</code>。为了提高开发效率，减少傻瓜错误，提高维护性。我为前端发请求好好折腾了一下。</p> <h3 id="目标"><a href="#目标" class="header-anchor">#</a> 目标</h3> <ul><li>请求需要处理常规业务异常</li> <li>请求高度可配置</li> <li>调用时有参数智能提示</li> <li>由于 ts 接口写起来比较繁琐，有规律性的,希望利用 webpack 自动生成</li></ul> <h3 id="_1-请求封装"><a href="#_1-请求封装" class="header-anchor">#</a> 1.请求封装</h3> <p>主要注意，不管是啥情况都要顺着 promise 往外抛，特别是异常情况，即便处理了也要给到调用方 catch 的机会</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span>
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'@/router'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> message <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'ant-design-vue'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">AxiosConfig</span><span class="token punctuation">{</span>
+    loading<span class="token operator">?</span><span class="token operator">:</span> boolean<span class="token punctuation">;</span>
+    loadingDesc<span class="token operator">?</span><span class="token operator">:</span> string<span class="token punctuation">;</span>
+    auth<span class="token operator">?</span><span class="token operator">:</span> boolean<span class="token punctuation">;</span>
+    errorFuck<span class="token operator">?</span><span class="token operator">:</span> boolean<span class="token punctuation">;</span>
+    success<span class="token operator">?</span><span class="token operator">:</span>boolean<span class="token punctuation">;</span>
+    successText<span class="token operator">?</span><span class="token operator">:</span>string<span class="token punctuation">;</span>
+    thirdApi<span class="token operator">?</span><span class="token operator">:</span>boolean<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// eslint-disable-next-line max-len</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">$axios</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">apiKey</span><span class="token operator">:</span> string<span class="token punctuation">,</span> params <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token literal-property property">config</span><span class="token operator">:</span> AxiosConfig <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> otherConfig <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> apiConfig <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">loading</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">loadingDesc</span><span class="token operator">:</span> <span class="token string">'加载中'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">auth</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">errorFuck</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">success</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">successText</span><span class="token operator">:</span> <span class="token string">'操作成功'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">thirdApi</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token operator">...</span>config
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>otherConfig<span class="token punctuation">.</span>headers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    otherConfig<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>Authorization <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bearer </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>local<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'accessToken'</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    otherConfig<span class="token punctuation">.</span>headers <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">Authorization</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bearer </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>local<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'accessToken'</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  apiConfig<span class="token punctuation">.</span>loading <span class="token operator">&amp;&amp;</span> Vue<span class="token punctuation">.</span>$xl<span class="token punctuation">.</span>loading<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> apiUrlArr <span class="token operator">=</span> apiKey<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">method</span><span class="token operator">:</span> apiUrlArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">url</span><span class="token operator">:</span> apiUrlArr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">data</span><span class="token operator">:</span> _params<span class="token punctuation">,</span>
+    <span class="token literal-property property">params</span><span class="token operator">:</span> apiUrlArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'get'</span> <span class="token operator">?</span> _params <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token operator">...</span>otherConfig
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">res</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    apiConfig<span class="token punctuation">.</span>loading <span class="token operator">&amp;&amp;</span> Vue<span class="token punctuation">.</span>$xl<span class="token punctuation">.</span>loading<span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>apiConfig<span class="token punctuation">.</span>thirdApi<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> res<span class="token punctuation">.</span>data
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>apiConfig<span class="token punctuation">.</span>auth<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'未登录，即将前往登录页面..'</span><span class="token punctuation">)</span>
+            Router<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Login'</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">query</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">redirect</span><span class="token operator">:</span> Router<span class="token punctuation">.</span>currentRoute<span class="token punctuation">.</span>fullPath <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token keyword">throw</span> res<span class="token punctuation">.</span>data
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>success<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      apiConfig<span class="token punctuation">.</span>errorFuck <span class="token operator">&amp;&amp;</span> message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>msg<span class="token punctuation">)</span>
+      <span class="token keyword">throw</span> res<span class="token punctuation">.</span>data
+    <span class="token punctuation">}</span>
+    apiConfig<span class="token punctuation">.</span>success <span class="token operator">&amp;&amp;</span> message<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span>apiConfig<span class="token punctuation">.</span>successText<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span>data
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">err</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    apiConfig<span class="token punctuation">.</span>loading <span class="token operator">&amp;&amp;</span> Vue<span class="token punctuation">.</span>$xl<span class="token punctuation">.</span>loading<span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">.</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">switch</span> <span class="token punctuation">(</span>err<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token number">500</span><span class="token operator">:</span>
+          message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'系统异常'</span><span class="token punctuation">)</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'fuck 500'</span><span class="token punctuation">)</span>
+          <span class="token keyword">break</span>
+        <span class="token keyword">default</span><span class="token operator">:</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'fuck 500'</span><span class="token punctuation">,</span> err<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// eslint-disable-next-line no-throw-literal</span>
+    <span class="token keyword">throw</span> <span class="token string">'opps An unexpected error occured'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h3 id="_2-利用-webpack-的-require-context-收集接口-url"><a href="#_2-利用-webpack-的-require-context-收集接口-url" class="header-anchor">#</a> 2.利用 webpack 的 <code>require.context</code> 收集接口 url</h3> <p>我的目录是这样的</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+api
+    <span class="token operator">--</span><span class="token operator">-</span>@types
+            <span class="token operator">--</span><span class="token operator">-</span>api<span class="token punctuation">.</span>ts <span class="token comment">// ts 接口用以做到智能提示</span>
+            <span class="token operator">--</span><span class="token operator">-</span>generate<span class="token punctuation">.</span>js <span class="token comment">// 生成 api.ts</span>
+    <span class="token operator">--</span><span class="token operator">-</span>modules
+            <span class="token operator">--</span><span class="token operator">-</span>a<span class="token punctuation">.</span>ts <span class="token comment">// 各个接口 url</span>
+            <span class="token operator">--</span><span class="token operator">-</span>b<span class="token punctuation">.</span>ts
+            <span class="token operator">...</span>
+    <span class="token operator">--</span><span class="token operator">-</span>axiosSet<span class="token punctuation">.</span>ts   <span class="token comment">// axios 封装后的代码</span>
+    <span class="token operator">--</span><span class="token operator">-</span>index<span class="token punctuation">.</span>ts  <span class="token comment">// api 处理完成的输出对象</span>
+    
+</code></pre></div><p>在 <code>index.ts</code> 中需要收集所有的 <code>modules</code> 并且注册为调用 <code>axios</code> 的方法</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token comment">// modules下的 xx.ts 长这样:</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">getSth</span><span class="token operator">:</span><span class="token string">'get /xx'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">postSth</span><span class="token operator">:</span><span class="token string">'post /xxx'</span><span class="token punctuation">,</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>在 <code>index.ts</code> 就可以：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> $axios<span class="token punctuation">,</span> AxiosConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@/Global/api/axiosSet'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Api <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@/Global/api/@types/api'</span>
+
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> originModule <span class="token operator">=</span> require<span class="token punctuation">.</span><span class="token function">context</span><span class="token punctuation">(</span><span class="token string">'./modules'</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.ts</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token literal-property property">$api</span><span class="token operator">:</span>Api <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+originModule<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">it</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> o <span class="token operator">=</span> <span class="token function">originModule</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span><span class="token punctuation">.</span>default
+  Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    o<span class="token punctuation">[</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">_</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span> <span class="token operator">=</span> o<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+    o<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">params</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token literal-property property">config</span><span class="token operator">:</span>AxiosConfig <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token literal-property property">otherConfig</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">$axios</span><span class="token punctuation">(</span>o<span class="token punctuation">[</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">_</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span> params<span class="token punctuation">,</span> config<span class="token punctuation">,</span> otherConfig<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  $api<span class="token punctuation">[</span>it<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.\/(.+)\.ts$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token string">'$1'</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">originModule</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span><span class="token punctuation">.</span>default
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Object<span class="token punctuation">.</span><span class="token function">freeze</span><span class="token punctuation">(</span>$api<span class="token punctuation">)</span>
+
+</code></pre></div><p>现在导出的 <code>$api</code> 是这样的:</p> <p><img src="http://img.xlcool.cn/FqxKBvUTVgsoxh1pMoxk0hlEr8LH" alt=""></p> <p>调用接口即: <code>$api.a.getSth()</code></p> <h3 id="_3-把index-ts导出挂载在-vue-实例上"><a href="#_3-把index-ts导出挂载在-vue-实例上" class="header-anchor">#</a> 3.把<code>index.ts</code>导出挂载在 <code>vue</code> 实例上</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token comment">// main.ts:</span>
+<span class="token keyword">import</span> $api <span class="token keyword">from</span> <span class="token string">'@/api/index'</span>
+<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$api <span class="token operator">=</span> $api
+
+</code></pre></div><p>主要注意需要在 <code>.d.ts</code>中声明，在项目任何位置都可以，不过建议在<code>@types</code>中，创建 <code>vue.d.ts</code>:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> api <span class="token keyword">from</span> <span class="token string">'@/api/index'</span>
+declare module <span class="token string">'vue/types/vue'</span><span class="token punctuation">{</span>
+    <span class="token keyword">interface</span> <span class="token class-name">Vue</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">$api</span><span class="token operator">:</span><span class="token keyword">typeof</span> api
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h3 id="_4-手写-types-api-ts-感受提示效果"><a href="#_4-手写-types-api-ts-感受提示效果" class="header-anchor">#</a> 4.手写 <code>@/types/api.ts</code> 感受提示效果</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> AxiosConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@/api/axiosSet'</span>
+<span class="token keyword">interface</span> <span class="token class-name">Res</span><span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">data</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">body</span><span class="token operator">:</span><span class="token constant">T</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">interface</span> <span class="token class-name">Params</span><span class="token punctuation">{</span>
+    pageSize<span class="token operator">?</span><span class="token operator">:</span>number<span class="token punctuation">,</span>
+    page<span class="token operator">?</span><span class="token operator">:</span>number<span class="token punctuation">,</span>
+    id<span class="token operator">?</span><span class="token operator">:</span>number<span class="token punctuation">,</span>
+    <span class="token punctuation">[</span>key<span class="token operator">:</span>string<span class="token punctuation">]</span><span class="token operator">:</span>any
+<span class="token punctuation">}</span>
+<span class="token keyword">interface</span> <span class="token class-name">ResFunction</span><span class="token punctuation">{</span>
+    <span class="token punctuation">(</span>params<span class="token operator">:</span>Params<span class="token punctuation">,</span> <span class="token literal-property property">config</span><span class="token operator">:</span>AxiosConfig<span class="token punctuation">,</span> <span class="token literal-property property">otherConfig</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token operator">:</span>Promise<span class="token operator">&lt;</span>Res<span class="token operator">&lt;</span>any<span class="token operator">&gt;&gt;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">Api</span><span class="token punctuation">{</span>
+    a<span class="token operator">?</span><span class="token operator">:</span>aContent<span class="token punctuation">,</span>
+    b<span class="token operator">?</span><span class="token operator">:</span>bContent<span class="token punctuation">,</span>
+    <span class="token punctuation">[</span>key<span class="token operator">:</span>string<span class="token punctuation">]</span><span class="token operator">:</span>any
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">aContent</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">getSth</span><span class="token operator">:</span>ResFunction<span class="token punctuation">,</span>
+    <span class="token literal-property property">postSth</span><span class="token operator">:</span>ResFunction<span class="token punctuation">,</span>
+    <span class="token literal-property property">_getSth</span><span class="token operator">:</span>string<span class="token punctuation">,</span>
+    <span class="token literal-property property">_postSth</span><span class="token operator">:</span>string<span class="token punctuation">,</span>
+    <span class="token punctuation">[</span>key<span class="token operator">:</span>string<span class="token punctuation">]</span><span class="token operator">:</span>any
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>在 <code>vue</code> 实例中:
+<img src="http://img.xlcool.cn/FowVZUnfDMIMX23oSoD2vKL8CICM" alt=""></p> <p><img src="http://img.xlcool.cn/FqtSjLe3Sn9ypMhLKsUXPUKB3vDT" alt=""></p> <p>这样一来写起来已经相当爽了，但不得不面对一行行写 <code>interface</code> 的事实，仔细观察其实这个文件是很有规律性的，完全可以交给工具生成，你说没有现成的 <code>webpack</code>插件？那我们就来写一个。</p> <h3 id="_5-自动生成-types-api-ts"><a href="#_5-自动生成-types-api-ts" class="header-anchor">#</a> 5.自动生成<code>@/types/api.ts</code></h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token comment">// generate.js</span>
+
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> join <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>join
+
+<span class="token keyword">const</span> <span class="token constant">CONFIG</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 源文件 根据这里生成 interface</span>
+  <span class="token literal-property property">apiPath</span><span class="token operator">:</span> <span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../modules'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token comment">// 目标文件上方的固定内容</span>
+  <span class="token literal-property property">baseContent</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">import { AxiosConfig } from '@/api/axiosSet'
+interface Res&lt;T&gt; {
+    data:{},
+    body:T
+}
+interface Params{
+    pageSize?:number,
+    page?:number,
+    id?:number,
+    [key:string]:any
+}
+interface ResFunction{
+    (params:Params, config:AxiosConfig, otherConfig:{}):Promise&lt;Res&lt;any&gt;&gt;
+}</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+  <span class="token comment">// 输出</span>
+  <span class="token literal-property property">outPut</span><span class="token operator">:</span> <span class="token string">'src/api/@types/api.ts'</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 读取文件路径
+ * @param startPath  起始目录文件夹路径
+ * @returns {Array}
+ */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">findSync</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">startPath</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">function</span> <span class="token function">finder</span> <span class="token punctuation">(</span><span class="token parameter">path</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> files <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readdirSync</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+    files<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">val<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> fPath <span class="token operator">=</span> <span class="token function">join</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> val<span class="token punctuation">)</span>
+      <span class="token keyword">let</span> stats <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">statSync</span><span class="token punctuation">(</span>fPath<span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>stats<span class="token punctuation">.</span><span class="token function">isDirectory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token function">finder</span><span class="token punctuation">(</span>fPath<span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>stats<span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>fPath<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">finder</span><span class="token punctuation">(</span>startPath<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 读取文件信息
+ * @param {*} fileName 文件路径
+ */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">getContent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fileName</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>fileName<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> err
+      <span class="token punctuation">}</span>
+      <span class="token keyword">let</span> res <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+      res <span class="token operator">=</span> res<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'export default'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+      <span class="token comment">// eslint-disable-next-line no-new-func</span>
+      <span class="token keyword">const</span> keys <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">return </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>res<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">fileName</span><span class="token operator">:</span> fileName<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">.+\/(.+)\.ts</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token string">'$1'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        keys
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 创建或覆盖文件
+ * @param {*} fileName 要覆盖的文件路径
+ * @param {*} str 新内容
+ */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">writeFileFn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fileName<span class="token punctuation">,</span> str</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  fs<span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> fileName<span class="token punctuation">)</span><span class="token punctuation">,</span> str<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">create </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>fileName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> successs</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * resolve ({
+ *     fileName,
+ *     origin,
+ *     main
+ * })
+ */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">handleFileContent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> apiPaths <span class="token operator">=</span> <span class="token function">findSync</span><span class="token punctuation">(</span><span class="token constant">CONFIG</span><span class="token punctuation">.</span>apiPath<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span>apiPaths<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">it</span> <span class="token operator">=&gt;</span> <span class="token function">getContent</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">resolve</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">newContent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> ApiStr <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">it</span> <span class="token operator">=&gt;</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>it<span class="token punctuation">.</span>fileName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">?:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>it<span class="token punctuation">.</span>fileName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">Content</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">',\n    '</span><span class="token punctuation">)</span>
+  ApiStr <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+export interface Api{
+    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ApiStr<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,
+    [key:string]:any
+}</span><span class="token template-punctuation string">`</span></span>
+  <span class="token keyword">let</span> contentInterface <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">it</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> Interface <span class="token operator">=</span> it<span class="token punctuation">.</span>keys<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>item<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:ResFunction</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">',\n    '</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> interfaceString <span class="token operator">=</span> it<span class="token punctuation">.</span>keys<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">_</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>item<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:string</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">',\n    '</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+export interface </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>it<span class="token punctuation">.</span>fileName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">Content{
+    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Interface<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,
+    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>interfaceString<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,
+    [key:string]:any
+}</span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">CONFIG</span><span class="token punctuation">.</span>baseContent<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ApiStr<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>contentInterface<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+</span><span class="token template-punctuation string">`</span></span>
+  <span class="token keyword">return</span> str
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">handleFileContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">writeFileFn</span><span class="token punctuation">(</span><span class="token constant">CONFIG</span><span class="token punctuation">.</span>outPut<span class="token punctuation">,</span> <span class="token function">newContent</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+
+</code></pre></div><p>node 文件编写好 导出为 <code>webpack</code>插件</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token comment">// 创建 apiPlugin.js 文件</span>
+
+<span class="token keyword">const</span> fn <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./src/api/@types/generate'</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">ApiPlugin</span> <span class="token punctuation">{</span>
+  <span class="token function">apply</span> <span class="token punctuation">(</span><span class="token parameter">compiler</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 指定要附加到的事件钩子函数</span>
+    compiler<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>emit<span class="token punctuation">.</span><span class="token function">tapAsync</span><span class="token punctuation">(</span>
+      <span class="token string">'ApiPlugin'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">(</span><span class="token parameter">compilation<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> ApiPlugin
+
+</code></pre></div><p>使用 webpack 插件，这里用的是 <code>vue-cli3</code> ，所以直接修改 <code>vue.config.js</code>:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">const</span> ApiPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./apiPlugin'</span><span class="token punctuation">)</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  <span class="token literal-property property">configureWebpack</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token keyword">new</span> <span class="token class-name">ApiPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>这样一来，每次 <code>api/modules</code>下文件变化，<code>webpack</code>都会自动生成对应的 <code>api/@types/api.ts</code> 帮助我们智能提示。</p></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/blog/2019/0807_canvasTips.html" class="prev">
+          canvas 小记
+        </a></span> <span class="next"><a href="/blog/2019/0603_algorithm.html">
+          日常问题算法练习
+        </a>
+        →
+      </span></p></div>  <!----></main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.1bf2ce02.js" defer></script><script src="/assets/js/2.219323b9.js" defer></script><script src="/assets/js/5.8878a9b1.js" defer></script><script src="/assets/js/39.d17837f7.js" defer></script>
+  </body>
+</html>
